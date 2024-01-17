@@ -1,0 +1,140 @@
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px;
+} 
+
+.content-main {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+
+/* .content-left {
+    display: flex;
+    flex-direction: column;
+}
+ */
+ .custom-dots {
+    border-radius: 20px;
+    width: 400px;
+    height: 500px;
+}
+
+/* da sakrijem strelice i da povecam da mogu mjenjat slike klikom */
+.image-gallery-left-nav .image-gallery-svg, .image-gallery-right-nav .image-gallery-svg {
+      visibility: hidden;
+      height: 389px;
+      width: 71px;
+}
+
+
+.image-gallery-slides {
+    border-radius: 20px;
+}
+
+.image-gallery-content {
+    width: 500px;
+  }
+
+  .image-gallery-thumbnail.active{
+    border: none;
+  }
+
+  .image-gallery-thumbnail:hover{
+    border: none;
+  }
+
+  .image-gallery-thumbnails {
+    border-radius: 10px;
+  }
+
+  .image-gallery-thumbnails .image-gallery-thumbnails-container {
+    display: flex;
+    cursor: pointer;
+    justify-content: space-between;
+}
+.image-gallery-thumbnail .image-gallery-thumbnail-image {
+  vertical-align: middle;
+  width: 100%;
+  line-height: 0;
+  border-radius: 20px;
+}
+
+
+.content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+}
+
+.content-Price {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+.popust {
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgb(202, 119, 46);
+}
+
+.price, .popust, .popust-cijene {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.popust-cijene {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
+
+.content-Price p {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+.content-addToCart {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+}
+
+.countProduct {
+  display: flex;
+  border-radius: 20px;
+  padding: 10px;
+  gap: 50px;
+  font-size: 20px;
+  background-color: rgb(167, 169, 181);
+}
+
+.count {
+  cursor: pointer;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  color: white;
+  background-color: rgb(255,125,27);
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
