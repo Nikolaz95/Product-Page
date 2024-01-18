@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast';
+import Modal from './Modal';
 
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -15,7 +16,27 @@ import Pic4 from '../assets/images/image-product-4.jpg';
 /* import css */
 import '../components/Content.css';
 
+//import icon
+import { IoMdCloseCircle } from "react-icons/io";
+
+
 const Content = ({ addToCart }) => {
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal);
+    };
+
+    if (modal) {
+        document.body.classList.add('active-modal')
+    } else {
+        document.body.classList.remove('active-modal')
+    }
+
+    // close modal function 
+    const toggleCloseModal = () => {
+        setModal(false)
+    };
 
     const notify = () => toast('Here is your toast.');
 
@@ -104,7 +125,8 @@ const Content = ({ addToCart }) => {
 
             <div className="content-main">
                 <div className="content-left">
-                    <ImageGallery items={images}
+                    <ImageGallery onClick={toggleModal}
+                        items={images}
                         showPlayButton={false}
                         showFullscreenButton={false}
                         showNav={true}
@@ -137,6 +159,14 @@ const Content = ({ addToCart }) => {
                 </div>
             </div>
             <Toaster />
+
+            <Modal
+                images={images}
+                toggleCloseModal={toggleCloseModal}
+                showModal={modal}
+                setModal={setModal}
+            />
+
         </div>
 
 
