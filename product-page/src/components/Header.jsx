@@ -20,11 +20,15 @@ const Header = ({ cartItems, removeFromCart }) => {
     const [showCart, setShowCart] = useState(null);
 
     const togleHandleCart = () => {
+        setShowCart((prevShowCart) => !prevShowCart);
+    }
+    /* const togleHandleCart = () => {
         setShowCart(true);
         if (showCart === true) {
             setShowCart(false);
         }
-    }
+    } */
+
     /* const [showCart, setShowCart] = useState(false)
 
     const togleHandleCart = () => {
