@@ -79,9 +79,9 @@
 
 
 .cart-container {
-    display: flex;
+    display: none;
     position: absolute;
-    top: 78px;
+    top: 88px;
     right: 129px;
     /* border: 1px solid black; */
     border-radius: 20px;
@@ -109,20 +109,28 @@
 
 /* animacija open close */
 
-.open {
-    animation: open 1.5s ease 0s 1 normal forwards;
-  }
+/* .open {
+  display: flex;
+  animation: open 1.5s ease 0s 1 normal forwards;
+} */
+
+.open{
+  display: flex;
+  animation: open .5s cubic-bezier(.25,.46,.45,.94) both}
+
+.close {
+  display: flex;
+  animation: close 2s ease 0s 1 normal forwards;
+}
+
+@keyframes open{0%{transform:scale(0);transform-origin:100% 0;opacity:1}100%{transform:scale(1);transform-origin:100% 0;opacity:1}}
   
-  .close {
-    animation: close 2s ease 0s 1 normal forwards;
-  }
-  
-  @keyframes open
+  /* @keyframes open
   {0%{transform:scaleY(0);
     transform-origin:100% 0;
     opacity:1}
     100%{transform:scaleY(1);
-    transform-origin:100% 0;opacity:1}}
+    transform-origin:100% 0;opacity:1}} */
 
     @keyframes close
     {0%{transform:scaleY(1);

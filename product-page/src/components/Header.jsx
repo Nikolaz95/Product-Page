@@ -17,11 +17,19 @@ import Pic1 from '../assets/images/image-product-1.jpg';
 import '../components/Header.css';
 
 const Header = ({ cartItems, removeFromCart }) => {
-    const [showCart, setShowCart] = useState(false)
+    const [showCart, setShowCart] = useState(null);
+
+    const togleHandleCart = () => {
+        setShowCart(true);
+        if (showCart === true) {
+            setShowCart(false);
+        }
+    }
+    /* const [showCart, setShowCart] = useState(false)
 
     const togleHandleCart = () => {
         setShowCart(!showCart)
-    }
+    } */
 
 
     const renderCartContent = () => {
@@ -89,16 +97,13 @@ const Header = ({ cartItems, removeFromCart }) => {
                 </div>
             </div>
 
-            {showCart && (
-                <div className={`cart-container ${showCart ? 'open' : 'close'}`}>
-
-                    <div className="cart-top">
-                        <h1>Cart</h1>
-                    </div>
-                    <span className="linija"></span>
-                    {renderCartContent()}
+            <div className={`cart-container ${showCart === true ? 'open' : null} ${showCart === false ? 'close' : null}`}>
+                <div className="cart-top">
+                    <h1>Cart</h1>
                 </div>
-            )}
+                <span className="linija"></span>
+                {renderCartContent()}
+            </div>
         </header>
     )
 }
